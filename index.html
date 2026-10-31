@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5ef">
+  <meta name="description" content="Três palavras em inglês todos os dias. Um pequeno hábito para ampliar seu vocabulário.">
+  <title>Daily Words — um pouco de inglês, todo dia</title>
+  <style>
+    :root{color-scheme:light;--paper:#f6f5ef;--ink:#203c34;--muted:#68736b;--line:#dce0d5;--green:#dfeece;--orange:#f2dfca}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;min-height:100svh;display:flex;flex-direction:column}button,a{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible{outline:3px solid #678548;outline-offset:5px}header{width:min(1120px,calc(100% - 48px));margin:0 auto;padding:27px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-size:19px;font-weight:700;letter-spacing:-.7px;display:flex;align-items:center;gap:10px}.logo{background:var(--ink);color:var(--paper);border-radius:10px;width:33px;height:33px;display:grid;place-items:center;font-family:Georgia,serif;font-style:italic;font-size:23px}.header-note{font-size:12px;color:var(--muted)}main{width:min(1180px,calc(100% - 40px));margin:auto;padding:55px 0 45px;text-align:center}.eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px}.dot{width:7px;height:7px;background:#75925c;border-radius:50%}h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(38px,5.6vw,64px);letter-spacing:-2.5px;line-height:1.1;margin:20px 0 16px}h1 em{color:#6a825a;font-weight:400}.intro{color:var(--muted);font-size:15px;line-height:1.7;margin:0}.date{display:inline-block;margin:27px 0 30px;border:1px solid var(--line);border-radius:30px;padding:9px 17px;font-size:12px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;text-align:center}.card{background:#fffefa;border:1px solid var(--line);border-radius:20px;padding:27px 32px 24px;position:relative;overflow:hidden;box-shadow:0 5px 18px #203c3403}.card-top{display:flex;align-items:center;justify-content:space-between}.level{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border-radius:20px;font-size:11px;font-weight:700;background:var(--green)}.intermediate .level{background:var(--orange)}.advanced .level{background:#e8e0f3}.number{font-family:Georgia,serif;font-size:15px;color:#8c9388}.word{font-family:Georgia,'Times New Roman',serif;font-size:clamp(36px,4.5vw,53px);font-weight:400;letter-spacing:-1.8px;margin:34px 0 8px;overflow-wrap:anywhere}.translation{color:var(--muted);font-size:15px;margin:0 0 20px}.listen{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:25px;padding:8px 14px;font-size:12px;cursor:pointer}.listen:hover{background:var(--paper)}.listen svg{width:15px;height:15px}.example{border-top:1px solid var(--line);margin-top:28px;padding-top:20px;min-height:95px}.example-label{display:block;font-size:9px;letter-spacing:1.7px;color:#7b8578;font-weight:700;margin-bottom:12px}.sentence{font-family:Georgia,serif;font-size:17px;line-height:1.5;margin:0}.sentence-pt{font-size:12px;color:var(--muted);line-height:1.6;margin:8px 0 0}.dictionary{margin-top:19px;text-align:left;border-top:1px solid var(--line);padding-top:14px;font-size:12px;color:var(--muted);line-height:1.6}.dictionary summary{cursor:pointer;text-align:center}.definition{margin-bottom:0}.hint{display:flex;justify-content:center;align-items:center;gap:8px;color:var(--muted);font-size:12px;margin:27px 0 0}.hint svg{width:15px;height:15px}footer{margin:0 auto;width:min(1120px,calc(100% - 48px));border-top:1px solid var(--line);padding:21px 0 25px;display:flex;justify-content:space-between;gap:16px;font-size:11px;color:var(--muted)}footer a{color:inherit;text-underline-offset:3px}#announcement{font-size:12px;color:var(--muted);min-height:16px;margin-top:12px}@media(max-width:900px){header{padding:20px 0}.header-note{font-size:10px}main{padding:38px 0 30px}h1{letter-spacing:-1.5px}.cards{grid-template-columns:1fr;gap:16px}.card{padding:23px 25px}.word{margin-top:25px;font-size:46px}.example{min-height:0}footer{flex-direction:column;text-align:center;gap:8px}.intro{font-size:14px}.hint{font-size:11px}}
+  </style>
+</head>
+<body>
+  <header><div class="brand"><span class="logo" aria-hidden="true">dw</span>daily words<span style="color:#91a17e">.</span></div><span class="header-note">Um pequeno hábito. Novas possibilidades.</span></header>
+  <main>
+    <div class="eyebrow"><span class="dot"></span>Seu inglês, um dia de cada vez</div>
+    <h1>Três palavras.<br><em>Um novo começo.</em></h1>
+    <p class="intro">Um passo simples para expandir seu vocabulário.<br>Descubra, escute e leve uma palavra nova para o seu dia.</p>
+    <time class="date" id="today"></time>
+    <section class="cards" aria-label="Palavras do dia" id="cards"></section>
+    <p class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 7a7 7 0 0 1 12 0l2 5M4 12l2 5a7 7 0 0 0 12 0"/></svg>Um novo trio todos os dias, à meia-noite no seu horário local.</p>
+    <div id="announcement" role="status" aria-live="polite"></div>
+  </main>
+  <footer><span>Um pouquinho hoje. Muito mais amanhã.</span><span>Definições: <a href="https://dictionaryapi.dev/" target="_blank" rel="noopener noreferrer">Free Dictionary API ↗</a></span></footer>
+  <script>
+    // Curadoria por dificuldade aproximada; a API de dicionário não fornece nível.
+    // Cada lista tem 62 palavras. O ciclo se repete a cada 62 dias.
+    const beginner = [
+      ['home','lar','I am going home.','Estou indo para casa.'],
+      ['friend','amigo / amiga','She is my best friend.','Ela é minha melhor amiga.'],
+      ['water','água','Would you like some water?','Você gostaria de um pouco de água?'],
+      ['happy','feliz','I am happy to see you.','Estou feliz em ver você.'],
+      ['book','livro','This book is very good.','Este livro é muito bom.'],
+      ['morning','manhã','I walk every morning.','Eu caminho todas as manhãs.'],
+      ['learn','aprender','I want to learn English.','Quero aprender inglês.'],
+      ['food','comida','The food is delicious.','A comida está deliciosa.'],
+      ['small','pequeno / pequena','We live in a small house.','Moramos em uma casa pequena.'],
+      ['family','família','My family is here.','Minha família está aqui.'],
+      ['garden','jardim','The garden is beautiful.','O jardim é bonito.'],
+      ['sleep','dormir','I need to sleep.','Preciso dormir.'],
+      ['window','janela','Please open the window.','Por favor, abra a janela.'],
+      ['sun','sol','The sun is shining.','O sol está brilhando.'],
+      ['help','ajudar','Can you help me?','Você pode me ajudar?'],
+      ['bread','pão','I eat bread for breakfast.','Como pão no café da manhã.'],
+      ['cold','frio / fria','The water is cold.','A água está fria.'],
+      ['door','porta','Please close the door.','Por favor, feche a porta.'],
+      ['work','trabalhar','I work near my home.','Trabalho perto de casa.'],
+      ['smile','sorriso','You have a lovely smile.','Você tem um sorriso lindo.'],
+      ['rain','chuva','I like the sound of rain.','Gosto do som da chuva.'],
+      ['school','escola','The school is near the park.','A escola fica perto do parque.'],
+      ['night','noite','We can see stars at night.','Podemos ver estrelas à noite.'],
+      ['listen','escutar','Listen to this song.','Escute esta música.'],
+      ['chair','cadeira','This chair is comfortable.','Esta cadeira é confortável.'],
+      ['warm','quente / agradável','It is warm today.','Está quentinho hoje.'],
+      ['walk','caminhar','We walk to the park.','Caminhamos até o parque.'],
+      ['today','hoje','Today is a good day.','Hoje é um bom dia.'],
+      ['apple','maçã','I have an apple in my bag.','Tenho uma maçã na bolsa.'],
+      ['green','verde','The leaves are green.','As folhas são verdes.'],
+      ['time','tempo','We have time to talk.','Temos tempo para conversar.'],
+      ["air", "ar", "The air is fresh.", "O ar está fresco."],
+      ["bag", "bolsa", "My bag is blue.", "Minha bolsa é azul."],
+      ["beach", "praia", "We are at the beach.", "Estamos na praia."],
+      ["bird", "pássaro", "A bird is in the tree.", "Há um pássaro na árvore."],
+      ["boat", "barco", "The boat is on the lake.", "O barco está no lago."],
+      ["bus", "ônibus", "I take the bus to school.", "Vou de ônibus para a escola."],
+      ["cake", "bolo", "This cake is delicious.", "Este bolo está delicioso."],
+      ["cat", "gato", "The cat is sleeping.", "O gato está dormindo."],
+      ["city", "cidade", "This city is big.", "Esta cidade é grande."],
+      ["clean", "limpo", "The room is clean.", "O quarto está limpo."],
+      ["clock", "relógio", "The clock is on the wall.", "O relógio está na parede."],
+      ["coffee", "café", "I drink coffee in the morning.", "Tomo café de manhã."],
+      ["cook", "cozinhar", "I like to cook at home.", "Gosto de cozinhar em casa."],
+      ["dog", "cachorro", "My dog likes to play.", "Meu cachorro gosta de brincar."],
+      ["easy", "fácil", "This lesson is easy.", "Esta lição é fácil."],
+      ["egg", "ovo", "I eat an egg for breakfast.", "Como um ovo no café da manhã."],
+      ["fish", "peixe", "There is a fish in the river.", "Há um peixe no rio."],
+      ["flower", "flor", "This flower is yellow.", "Esta flor é amarela."],
+      ["game", "jogo", "This game is fun.", "Este jogo é divertido."],
+      ["hand", "mão", "Raise your hand.", "Levante a mão."],
+      ["house", "casa", "Their house is near the school.", "A casa deles fica perto da escola."],
+      ["kind", "gentil", "Our teacher is kind.", "Nosso professor é gentil."],
+      ["milk", "leite", "There is milk in the fridge.", "Há leite na geladeira."],
+      ["money", "dinheiro", "I need money for the bus.", "Preciso de dinheiro para o ônibus."],
+      ["music", "música", "I love this music.", "Adoro esta música."],
+      ["new", "novo", "I have a new bike.", "Tenho uma bicicleta nova."],
+      ["park", "parque", "The children are in the park.", "As crianças estão no parque."],
+      ["read", "ler", "I read before bed.", "Leio antes de dormir."],
+      ["shirt", "camisa", "His shirt is white.", "A camisa dele é branca."],
+      ["table", "mesa", "The keys are on the table.", "As chaves estão na mesa."],
+      ["tree", "árvore", "We sit under a tree.", "Sentamos debaixo de uma árvore."]
+    ];
+    const intermediate = [
+      ['achieve','alcançar / conquistar','You can achieve your goals.','Você pode alcançar seus objetivos.'],
+      ['although','embora','Although it rained, we went outside.','Embora tenha chovido, saímos.'],
+      ['improve','melhorar','Practice will improve your English.','A prática vai melhorar seu inglês.'],
+      ['purpose','propósito / finalidade','Every journey has a purpose.','Toda jornada tem um propósito.'],
+      ['reliable','confiável','She is a reliable friend.','Ela é uma amiga confiável.'],
+      ['effort','esforço','Learning takes time and effort.','Aprender exige tempo e esforço.'],
+      ['instead','em vez disso','Let us walk instead.','Vamos caminhar em vez disso.'],
+      ['opportunity','oportunidade','This is a great opportunity to learn.','Esta é uma ótima oportunidade para aprender.'],
+      ['imagine','imaginar','Imagine living near the sea.','Imagine morar perto do mar.'],
+      ['advice','conselho / orientação','Thank you for your advice.','Obrigado pelo seu conselho.'],
+      ['encourage','incentivar','My friends encourage me to try.','Meus amigos me incentivam a tentar.'],
+      ['available','disponível','Are you available tomorrow?','Você está disponível amanhã?'],
+      ['journey','jornada / viagem','The journey took three hours.','A viagem levou três horas.'],
+      ['confident','confiante','I feel confident about the interview.','Estou confiante para a entrevista.'],
+      ['discover','descobrir','We discover something new every day.','Descobrimos algo novo todos os dias.'],
+      ['however','no entanto','It was difficult. However, we finished.','Foi difícil. No entanto, terminamos.'],
+      ['knowledge','conhecimento','Reading helps you gain knowledge.','Ler ajuda você a adquirir conhecimento.'],
+      ['avoid','evitar','Try to avoid making the same mistake.','Tente evitar cometer o mesmo erro.'],
+      ['require','exigir / precisar de','These plants require plenty of water.','Estas plantas precisam de bastante água.'],
+      ['thoughtful','atencioso / atenciosa','That was a thoughtful gift.','Foi um presente atencioso.'],
+      ['challenge','desafio','Learning a language is a rewarding challenge.','Aprender um idioma é um desafio gratificante.'],
+      ['consider','considerar','Please consider all the options.','Por favor, considere todas as opções.'],
+      ['despite','apesar de','We enjoyed the trip despite the rain.','Aproveitamos a viagem apesar da chuva.'],
+      ['develop','desenvolver','You can develop a new skill.','Você pode desenvolver uma nova habilidade.'],
+      ['approach','abordagem','Let us try a different approach.','Vamos tentar uma abordagem diferente.'],
+      ['benefit','benefício','Exercise has many benefits.','Exercitar-se traz muitos benefícios.'],
+      ['curious','curioso / curiosa','Stay curious about the world.','Mantenha a curiosidade sobre o mundo.'],
+      ['improvement','melhoria','I can see a big improvement.','Consigo ver uma grande melhoria.'],
+      ['meaningful','significativo / significativa','We had a meaningful conversation.','Tivemos uma conversa significativa.'],
+      ['support','apoiar','We support each other.','Nós nos apoiamos.'],
+      ['progress','progresso','Small steps lead to progress.','Pequenos passos levam ao progresso.'],
+      ["afford", "ter condições de pagar", "We cannot afford a new car.", "Não temos condições de comprar um carro novo."],
+      ["arrange", "organizar", "We need to arrange a meeting.", "Precisamos organizar uma reunião."],
+      ["aware", "ciente", "Are you aware of the changes?", "Você está ciente das mudanças?"],
+      ["balance", "equilíbrio", "Finding a balance takes practice.", "Encontrar um equilíbrio exige prática."],
+      ["behave", "comportar-se", "The children behave well at school.", "As crianças se comportam bem na escola."],
+      ["belong", "pertencer", "These books belong to me.", "Estes livros pertencem a mim."],
+      ["borrow", "pegar emprestado", "May I borrow your pen?", "Posso pegar sua caneta emprestada?"],
+      ["compare", "comparar", "Compare the prices before you buy.", "Compare os preços antes de comprar."],
+      ["complain", "reclamar", "Guests sometimes complain about the noise.", "Os hóspedes às vezes reclamam do barulho."],
+      ["convenient", "conveniente / prático", "This location is convenient for everyone.", "Este local é prático para todos."],
+      ["decision", "decisão", "It was a difficult decision.", "Foi uma decisão difícil."],
+      ["depend", "depender", "The results depend on your effort.", "Os resultados dependem do seu esforço."],
+      ["deserve", "merecer", "You deserve a break.", "Você merece uma pausa."],
+      ["environment", "meio ambiente", "We should protect the environment.", "Devemos proteger o meio ambiente."],
+      ["evidence", "evidência / prova", "There is no evidence of damage.", "Não há evidências de danos."],
+      ["experience", "experiência", "Travel gives you valuable experience.", "Viajar proporciona experiências valiosas."],
+      ["explain", "explicar", "Can you explain the rules?", "Você pode explicar as regras?"],
+      ["flexible", "flexível", "My working hours are flexible.", "Meu horário de trabalho é flexível."],
+      ["fortunately", "felizmente", "Fortunately, nobody was hurt.", "Felizmente, ninguém se machucou."],
+      ["further", "adicional / mais", "Contact us for further information.", "Entre em contato para mais informações."],
+      ["habit", "hábito", "Reading is a useful habit.", "Ler é um hábito útil."],
+      ["include", "incluir", "The price will include breakfast.", "O preço incluirá o café da manhã."],
+      ["increase", "aumentar", "We need to increase production.", "Precisamos aumentar a produção."],
+      ["manage", "administrar", "She knows how to manage a team.", "Ela sabe como administrar uma equipe."],
+      ["notice", "perceber", "Did you notice the new sign?", "Você percebeu a placa nova?"],
+      ["otherwise", "caso contrário", "Leave now; otherwise, you will be late.", "Saia agora; caso contrário, você vai se atrasar."],
+      ["prevent", "impedir / prevenir", "These measures prevent accidents.", "Estas medidas previnem acidentes."],
+      ["provide", "fornecer", "They provide free meals.", "Eles fornecem refeições gratuitas."],
+      ["realize", "perceber / dar-se conta", "I realize that I was wrong.", "Percebo que estava errado."],
+      ["reasonable", "razoável", "That seems like a reasonable price.", "Esse parece um preço razoável."],
+      ["suggest", "sugerir", "I suggest taking a short break.", "Sugiro fazer uma pequena pausa."]
+    ];
+    const advanced = [
+      ["ambiguous", "ambíguo", "The instructions were ambiguous.", "As instruções eram ambíguas."],
+      ["meticulous", "minucioso", "Her meticulous research revealed the error.", "A pesquisa minuciosa dela revelou o erro."],
+      ["resilient", "resiliente", "The community remained resilient after the flood.", "A comunidade permaneceu resiliente após a enchente."],
+      ["ubiquitous", "onipresente", "Smartphones have become ubiquitous.", "Os smartphones se tornaram onipresentes."],
+      ["inevitable", "inevitável", "Some degree of uncertainty is inevitable.", "Algum grau de incerteza é inevitável."],
+      ["nuance", "nuance / sutileza", "The translation misses an important nuance.", "A tradução deixa escapar uma sutileza importante."],
+      ["pragmatic", "pragmático", "We need a pragmatic solution to this problem.", "Precisamos de uma solução pragmática para este problema."],
+      ["compelling", "convincente / cativante", "She presented a compelling argument.", "Ela apresentou um argumento convincente."],
+      ["undermine", "enfraquecer / minar", "Rumors can undermine public trust.", "Boatos podem minar a confiança pública."],
+      ["scrutinize", "examinar minuciosamente", "Experts will scrutinize the findings.", "Especialistas examinarão os resultados minuciosamente."],
+      ["alleviate", "aliviar", "The new measures may alleviate poverty.", "As novas medidas podem aliviar a pobreza."],
+      ["exacerbate", "agravar", "The drought could exacerbate food shortages.", "A seca pode agravar a escassez de alimentos."],
+      ["coherent", "coerente", "The report offers a coherent explanation.", "O relatório oferece uma explicação coerente."],
+      ["discrepancy", "discrepância", "We found a discrepancy between the two accounts.", "Encontramos uma discrepância entre os dois relatos."],
+      ["feasible", "viável", "The proposal is technically feasible.", "A proposta é tecnicamente viável."],
+      ["inadvertently", "inadvertidamente / sem querer", "I inadvertently deleted the file.", "Apaguei o arquivo sem querer."],
+      ["substantial", "considerável / substancial", "The project requires substantial investment.", "O projeto exige um investimento considerável."],
+      ["reluctant", "relutante", "He was reluctant to share the details.", "Ele estava relutante em compartilhar os detalhes."],
+      ["plausible", "plausível", "That is a plausible explanation.", "Essa é uma explicação plausível."],
+      ["comprehensive", "abrangente", "The team conducted a comprehensive review.", "A equipe realizou uma análise abrangente."],
+      ["conscientious", "consciencioso / cuidadoso", "She is a conscientious researcher.", "Ela é uma pesquisadora conscienciosa."],
+      ["eloquent", "eloquente", "His eloquent speech moved the audience.", "Seu discurso eloquente emocionou o público."],
+      ["arbitrary", "arbitrário", "The selection criteria seemed arbitrary.", "Os critérios de seleção pareciam arbitrários."],
+      ["conundrum", "enigma / problema difícil", "This ethical conundrum has no easy answer.", "Este dilema ético não tem resposta fácil."],
+      ["profound", "profundo", "The discovery had a profound impact.", "A descoberta teve um impacto profundo."],
+      ["pervasive", "generalizado / disseminado", "The study revealed pervasive inequality.", "O estudo revelou uma desigualdade generalizada."],
+      ["underlying", "subjacente", "We must address the underlying causes.", "Precisamos lidar com as causas subjacentes."],
+      ["mitigate", "atenuar / mitigar", "Trees help mitigate the effects of heat.", "As árvores ajudam a atenuar os efeitos do calor."],
+      ["cumbersome", "complicado / pouco prático", "The application process is cumbersome.", "O processo de inscrição é complicado."],
+      ["assertive", "assertivo", "You can be assertive without being rude.", "Você pode ser assertivo sem ser grosseiro."],
+      ["viable", "viável", "We are searching for a viable alternative.", "Estamos buscando uma alternativa viável."],
+      ["quintessential", "típico / exemplar", "This village is a quintessential example of rural life.", "Esta vila é um exemplo típico da vida rural."],
+      ["ephemeral", "efêmero", "Online fame can be ephemeral.", "A fama na internet pode ser efêmera."],
+      ["serendipity", "descoberta feliz por acaso", "Serendipity played a part in the discovery.", "Um feliz acaso contribuiu para a descoberta."],
+      ["unequivocal", "inequívoco", "The committee gave its unequivocal support.", "O comitê deu seu apoio inequívoco."],
+      ["detrimental", "prejudicial", "Lack of sleep is detrimental to health.", "A falta de sono é prejudicial à saúde."],
+      ["intricate", "intrincado / complexo", "The fabric has an intricate pattern.", "O tecido tem um padrão intrincado."],
+      ["exemplary", "exemplar", "Her conduct was exemplary.", "A conduta dela foi exemplar."],
+      ["contentious", "controverso", "The proposal remains contentious.", "A proposta continua controversa."],
+      ["discern", "discernir / distinguir", "It is difficult to discern a clear pattern.", "É difícil distinguir um padrão claro."],
+      ["circumvent", "contornar / burlar", "They tried to circumvent the restrictions.", "Eles tentaram contornar as restrições."],
+      ["corroborate", "corroborar / confirmar", "The documents corroborate her account.", "Os documentos corroboram o relato dela."],
+      ["impede", "impedir / dificultar", "Heavy snow may impede rescue efforts.", "A neve intensa pode dificultar os esforços de resgate."],
+      ["perseverance", "perseverança", "Her perseverance finally paid off.", "A perseverança dela finalmente deu resultado."],
+      ["conspicuous", "chamativo / evidente", "His absence was conspicuous.", "A ausência dele era evidente."],
+      ["obsolete", "obsoleto", "The old system is now obsolete.", "O sistema antigo agora está obsoleto."],
+      ["lucrative", "lucrativo", "The business proved highly lucrative.", "O negócio se mostrou altamente lucrativo."],
+      ["precarious", "precário / instável", "They were in a precarious financial position.", "Eles estavam em uma situação financeira instável."],
+      ["impartial", "imparcial", "A judge must remain impartial.", "Um juiz deve permanecer imparcial."],
+      ["versatile", "versátil", "This versatile tool has many uses.", "Esta ferramenta versátil tem muitos usos."],
+      ["succinct", "sucinto", "Please give a succinct explanation.", "Por favor, dê uma explicação sucinta."],
+      ["tentative", "provisório", "We reached a tentative agreement.", "Chegamos a um acordo provisório."],
+      ["rigorous", "rigoroso", "The method requires rigorous testing.", "O método exige testes rigorosos."],
+      ["reconcile", "conciliar / reconciliar", "We must reconcile these conflicting demands.", "Precisamos conciliar estas exigências conflitantes."],
+      ["bolster", "reforçar", "The new evidence may bolster their case.", "As novas evidências podem reforçar os argumentos deles."],
+      ["withstand", "resistir a", "The bridge can withstand strong winds.", "A ponte pode resistir a ventos fortes."],
+      ["unprecedented", "sem precedentes", "The region faced unprecedented flooding.", "A região enfrentou enchentes sem precedentes."],
+      ["indispensable", "indispensável", "Clean water is indispensable to life.", "A água limpa é indispensável à vida."],
+      ["apprehensive", "apreensivo", "She felt apprehensive about the interview.", "Ela se sentiu apreensiva com a entrevista."],
+      ["insightful", "perspicaz / esclarecedor", "The article offers an insightful analysis.", "O artigo oferece uma análise esclarecedora."],
+      ["eloquence", "eloquência", "She spoke with remarkable eloquence.", "Ela falou com uma eloquência notável."],
+      ["accountability", "responsabilização / prestação de contas", "Transparency strengthens public accountability.", "A transparência fortalece a prestação de contas ao público."]
+    ];
+    const levels = [
+      {words: beginner, className: "beginner", label: "✧ Iniciante"},
+      {words: intermediate, className: "intermediate", label: "↗ Intermediário"},
+      {words: advanced, className: "advanced", label: "✦ Avançado"}
+    ];
+    const speakerIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg>';
+    let activeDate = '', generation = 0;
+    function dayNumber(date) { return Math.floor(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) / 86400000); }
+    function pickWord(list, date) { return list[((dayNumber(date) % list.length) + list.length) % list.length]; }
+    function element(tag, className, text) { const node = document.createElement(tag); node.className = className; if (text !== undefined) node.textContent = text; return node; }
+    function renderCard(entry, index) {
+      const [word, translation, example, portuguese] = entry;
+      const level = levels[index];
+      const card = element('article', 'card ' + level.className);
+      const top = element('div', 'card-top');
+      top.append(element('span','level',level.label),element('span','number',String(index + 1).padStart(2, '0')));
+      const title = element('h2','word',word); title.lang = 'en';
+      const listen = element('button','listen'); listen.type = 'button'; listen.innerHTML = speakerIcon; listen.append(document.createTextNode('Ouvir pronúncia')); listen.setAttribute('aria-label','Ouvir a pronúncia de ' + word);
+      listen.addEventListener('click', () => {
+        if (!('speechSynthesis' in window)) { document.getElementById('announcement').textContent = 'A pronúncia não está disponível neste navegador.'; return; }
+        speechSynthesis.cancel(); const utterance = new SpeechSynthesisUtterance(word); utterance.lang = 'en-US'; utterance.rate = .8;
+        utterance.onerror = () => { document.getElementById('announcement').textContent = 'Não foi possível reproduzir a pronúncia. Verifique as vozes instaladas no navegador.'; };
+        speechSynthesis.speak(utterance);
+      });
+      const usage = element('div','example'); const sentence = element('p','sentence', '“' + example + '”'); sentence.lang = 'en';
+      usage.append(element('span','example-label','EM UMA FRASE'),sentence,element('p','sentence-pt',portuguese));
+      const details = element('details','dictionary'); const definition = element('p','definition','Consultando o dicionário…'); definition.lang = 'en'; details.append(element('summary','','Definição em inglês'),definition);
+      card.append(top,title,element('p','translation',translation),listen,usage,details);
+      const currentGeneration = generation;
+      // Fetch only when the reader requests the definition; core content works offline.
+      details.addEventListener('toggle', async () => {
+        if (!details.open || details.dataset.requested) return;
+        details.dataset.requested = 'true';
+        const controller = new AbortController(); const timeout = setTimeout(() => controller.abort(), 8000);
+        try {
+          const response = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(word), {signal: controller.signal});
+          if (!response.ok) throw new Error('Dictionary unavailable');
+          const data = await response.json(); const meaning = data?.[0]?.meanings?.[0]?.definitions?.[0]?.definition;
+          if (!meaning) throw new Error('No definition');
+          if (generation === currentGeneration) definition.textContent = meaning;
+        } catch {
+          definition.lang = 'pt-BR'; definition.textContent = 'Dicionário indisponível no momento. A tradução e o exemplo continuam disponíveis.';
+          delete details.dataset.requested;
+        } finally { clearTimeout(timeout); }
+      });
+      return card;
+    }
+    function updateDay() {
+      const now = new Date(); const key = [now.getFullYear(), now.getMonth(), now.getDate()].join('-');
+      if (key === activeDate) return;
+      activeDate = key; generation++;
+      const time = document.getElementById('today'); time.textContent = new Intl.DateTimeFormat('pt-BR',{day:'numeric',month:'long',year:'numeric'}).format(now); time.dateTime = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
+      document.getElementById('cards').replaceChildren(...levels.map((level,index) => renderCard(pickWord(level.words,now),index)));
+      document.getElementById('announcement').textContent = '';
+    }
+    updateDay();
+    setInterval(updateDay,1000);
+    document.addEventListener('visibilitychange',updateDay);
+    window.addEventListener('focus',updateDay);
+  </script>
+</body>
+</html>
